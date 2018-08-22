@@ -6,7 +6,7 @@
 
 std::string loadConfig(std::string var)
 {
-	std::ifstream config("threplay.config", std::ifstream::in);
+	std::ifstream config("./threplay.config", std::ifstream::in);
 	if(config.good()) {
 		while(config.peek() != EOF) {
 			std::string id;
@@ -91,7 +91,7 @@ int main(int argc, char *argv[])
 				if (filename[namepos + 2] == '_') {
 					game = 12;
 				}
-				else if (filename[namepos + 3] == '8') {
+				else if (filename[namepos + 2] == '8') {
 					//gfw
 					game = 128;
 				}
