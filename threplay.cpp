@@ -96,19 +96,19 @@ int main(int argc, char *argv[])
 					game = 128;
 				}
 			}
-			else if (filename[namepos + 2] == '3') {
+			else if (filename[namepos + 1] == '3') {
 				//td
 				game = 13;
 			}
-			else if (filename[namepos + 2] == '4') {
+			else if (filename[namepos + 1] == '4') {
 				//ddc
 				game = 14;
 			}
-			else if (filename[namepos + 2] == '5') {
+			else if (filename[namepos + 1] == '5') {
 				//lolk
 				game = 15;
 			}
-			else if (filename[namepos + 2] == '6') {
+			else if (filename[namepos + 1] == '6') {
 				//hsifs
 				game = 16;
 			}
@@ -170,6 +170,8 @@ int main(int argc, char *argv[])
 					g = loadConfig("th128g");
 					break;
 			}
+
+			//std::cout << r << std::endl << g << std::endl;
 
 			if(r != "NA" && g != "NA") {
 				std::ifstream  src(filename, std::ios::binary);
