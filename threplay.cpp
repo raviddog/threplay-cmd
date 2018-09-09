@@ -138,8 +138,8 @@ int main(int argc, char *argv[])
 					g = loadConfig("th09g");
 					break;
 				case 10:
-					r = loadConfig("th106r");
-					g = loadConfig("th106g");
+					r = loadConfig("th10r");
+					g = loadConfig("th10g");
 					break;
 				case 11:
 					r = loadConfig("th11r");
