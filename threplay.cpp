@@ -9,6 +9,9 @@ std::string loadConfig(std::string var)
 	std::ifstream config("./threplay.config", std::ifstream::in);
 	if(config.good()) {
 		while(config.peek() != EOF) {
+			if(config.peek() == '[') {
+				config.ignore(512, '\n');
+			}
 			std::string id;
 			std::getline(config, id, '=');
 			if(id == var) {
@@ -19,7 +22,7 @@ std::string loadConfig(std::string var)
 			}
 		}
 	}
-	return "NA";
+	return "";
 }
 
 int main(int argc, char *argv[])
@@ -169,11 +172,10 @@ int main(int argc, char *argv[])
 					r = loadConfig("th128r");
 					g = loadConfig("th128g");
 					break;
-			}
+			} 
 
 			//std::cout << r << std::endl << g << std::endl;
-
-			if(r != "NA" && g != "NA") {
+			if(r != "" && g != "") {
 				std::ifstream  src(filename, std::ios::binary);
 				std::ofstream  dst(r, std::ios::binary);
 
@@ -182,7 +184,18 @@ int main(int argc, char *argv[])
 				//std::cout << game << g << r << std::endl;
 				
 				WinExec(g.c_str(), SW_SHOW);
+			} else {
+				if(r == "") {
+					MessageBox(NULL, TEXT("Unable to save replay. Check the replay settings in your config file."), TEXT("Error"), MB_OK|MB_ICONERROR);
+				}
+				if(g == "") {
+					MessageBox(NULL, TEXT("Unable to open game. Check the game location in your config file."), TEXT("Error"), MB_OK|MB_ICONERROR);
+				}
 			}
+			
+		} else {
+			//game not found
+			MessageBox(NULL, TEXT("No game detected"), TEXT("Error"), MB_OK | MB_ICONERROR);
 		}
 	}
 }
