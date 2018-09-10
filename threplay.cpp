@@ -202,7 +202,7 @@ int main(int argc, char *argv[])
 
 				STARTUPINFO startupInfo = {0};
 				PROCESS_INFORMATION processInfo = {0};
-				CreateProcess(g.c_str(), NULL, NULL, NULL, FALSE, 0, NULL, NULL, &startupInfo, &processInfo);
+				CreateProcess(g.c_str(), NULL, NULL, NULL, FALSE, 0, NULL, d.c_str(), &startupInfo, &processInfo);
 			} else {
 				if(r == "") {
 					MessageBox(NULL, TEXT("Unable to save replay. Check the replay settings in your config file."), TEXT("Error"), MB_OK|MB_ICONERROR);
