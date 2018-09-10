@@ -9,7 +9,7 @@ std::string loadConfig(std::string var)
 	std::ifstream config("./threplay.config", std::ifstream::in);
 	if(config.good()) {
 		while(config.peek() != EOF) {
-			if(config.peek() == '[' || config.peek() == '\n') {
+			if(config.peek() == '[') {
 				config.ignore(512, '\n');
 			}
 			std::string id;
@@ -182,8 +182,27 @@ int main(int argc, char *argv[])
 				dst << src.rdbuf();
 
 				//std::cout << game << g << r << std::endl;
+
+				std::string d;
+				d = g;
+				int l = g.find_last_of('\\');
+				if(l == std::string::npos) {
+					l = g.find_last_of('/');
+				}
+				if(l == std::string::npos) {
+					//no directory found
+				} else {
+					d.erase(l + 1, std::string::npos);
+				}
 				
-				WinExec(g.c_str(), SW_SHOW);
+				//MessageBox(NULL, d.c_str(), d.c_str(), MB_OK|MB_ICONINFORMATION);
+				
+				
+				//WinExec(g.c_str(), SW_SHOW);
+
+				STARTUPINFO startupInfo = {0};
+				PROCESS_INFORMATION processInfo = {0};
+				CreateProcess(g.c_str(), NULL, NULL, NULL, FALSE, 0, NULL, NULL, &startupInfo, &processInfo);
 			} else {
 				if(r == "") {
 					MessageBox(NULL, TEXT("Unable to save replay. Check the replay settings in your config file."), TEXT("Error"), MB_OK|MB_ICONERROR);
