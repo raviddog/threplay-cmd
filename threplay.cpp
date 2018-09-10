@@ -9,7 +9,7 @@ std::string loadConfig(std::string var)
 	std::ifstream config("./threplay.config", std::ifstream::in);
 	if(config.good()) {
 		while(config.peek() != EOF) {
-			if(config.peek() == '[') {
+			if(config.peek() == '[' || config.peek() == '\n') {
 				config.ignore(512, '\n');
 			}
 			std::string id;
@@ -28,7 +28,7 @@ std::string loadConfig(std::string var)
 int main(int argc, char *argv[])
 {
 	if (argc != 2) {
-		printf("drag a single touhou replay file onto this program");
+		MessageBox(NULL, TEXT("Drag a single Touhou replay file from the same folder onto this program"), TEXT("Alert"), MB_OK|MB_ICONINFORMATION);
 		return 0;
 	}
 	else {
