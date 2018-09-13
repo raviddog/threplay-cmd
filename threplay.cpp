@@ -102,7 +102,7 @@ int main(int argc, char *argv[])
 		nameFound = false;
 		std::string conf;
 		while(!nameFound) {
-			if(filename[namepos] == '_') {
+			if(filename[namepos] == '_' || filename[namepos] == '\0') {
 				//end of the line
 				nameFound = true;
 			} else {
