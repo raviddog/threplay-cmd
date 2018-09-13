@@ -53,9 +53,10 @@ bool launchProgram(std::string game) {
 
 int main(int argc, char *argv[])
 {
+	/*
 	if (argc == 1) {
 		bool done = false;
-		printf("Enter number of game to open: ");
+		printf("To open a replay, move it to the same folder as this program and drag it on top.\nEnter number of game to open: ");
 		while(!done) {
 			std::string game, search;
 			scanf("%s", &game);
@@ -74,7 +75,7 @@ int main(int argc, char *argv[])
 			}
 
 		}
-	} else if(argc == 2) {
+	} else */if(argc == 2) {
 		std::string filename = argv[1];
 		int namepos = filename.find(".rpy");
 		bool nameFound = false;
@@ -109,7 +110,7 @@ int main(int argc, char *argv[])
 				namepos++;
 			}
 		}
-		
+
 		std::string r, g;
 		r = loadConfig(conf + "r");
 		g = loadConfig(conf + "g");
@@ -130,7 +131,8 @@ int main(int argc, char *argv[])
 			}
 		}
 	} else {
-		MessageBox(NULL, TEXT("Open this program to launch a game or drag a single Touhou replay file from the same folder onto this program to watch it"), TEXT("Alert"), MB_OK|MB_ICONINFORMATION);
+		//MessageBox(NULL, TEXT("Open this program to launch a game or drag a single Touhou replay file from the same folder onto this program to watch it"), TEXT("Alert"), MB_OK|MB_ICONINFORMATION);
+		MessageBox(NULL, TEXT("Drag a single Touhou replay file from the same folder onto this program to watch it"), TEXT("Alert"), MB_OK|MB_ICONINFORMATION);
 	}
 	return 0;
 }
