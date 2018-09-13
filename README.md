@@ -1,7 +1,6 @@
 # Readme
 
 **threplay** is a small program to aid in watching downloaded Touhou replays without having to manually rename and copy them into the respective game folders.
-It currently supports replays from all mainline Touhou games and Great Fairy Wars.
 
 ## Usage
 
