@@ -12,6 +12,6 @@ Note: an existing replay with the same name as set in config will be overwritten
 ## todo
 
 - ~~change winexec to createprocess~~
-- possibly move game detection to the config file
+- ~~possibly move game detection to the config file~~
 - add gui interface
 - work out a way to grab replays from any directory
