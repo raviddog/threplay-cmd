@@ -7,7 +7,7 @@
 
 std::string loadConfig(std::string var)
 {
-	std::ifstream config("./threplay.config", std::ifstream::in);
+	std::ifstream config("./config.txt", std::ifstream::in);
 	if(config.good()) {
 		while(config.peek() != EOF) {
 			if(config.peek() == '[') {
