@@ -95,7 +95,7 @@ int main(int argc, char *argv[])
 
 		//in theory namepos should now be on the 't' in th on the game in the replay filename
 		if (namepos == -1) {
-			MessageBox(NULL, TEXT("Unable to autodetect game version. "), TEXT("Error"), MB_OK|MB_ICONERROR);
+			MessageBox(NULL, TEXT("Unable to autodetect game version. Make sure the replay includes the game number \"th#_\" in the file name."), TEXT("Error"), MB_OK|MB_ICONERROR);
 			return -1;
 		}
 		
