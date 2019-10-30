@@ -1,6 +1,8 @@
 # Readme
 
-**threplay** is a small program to aid in watching downloaded Touhou replays without having to manually rename and copy them into the respective game folders.
+**OUTDATED. USE [Touhou Replay Manager](https://github.com/raviddog/threplay) INSTEAD**
+
+~~**threplay** is a small program to aid in watching downloaded Touhou replays without having to manually rename and copy them into the respective game folders.~~
 
 ## Usage
 
